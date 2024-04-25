@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
-import useWeatherData from "./customHooks/useWeatherData";
+import DisplayData from "./DisplayData";
 
 function Body() {
   const [cityName, setCityName] = useState("");
@@ -19,8 +19,6 @@ function Body() {
     console.log("cityName:", cityName);
   };
 
-  useWeatherData(cityName);
-
   return (
     <>
       <form action="" onSubmit={handleSubmit}>
@@ -32,17 +30,9 @@ function Body() {
           placeholder="Enter the city name"
         />
         <button>Submit</button>
+      <DisplayData name={cityName}/>
       </form>
 
-      <div>
-        <h2>City Weather state:</h2>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
     </>
   );
 }
