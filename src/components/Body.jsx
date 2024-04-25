@@ -1,8 +1,6 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
-import axios from "axios";
 import { useState } from "react";
-import "./App.css";
 import DisplayData from "./DisplayData";
 
 function Body() {

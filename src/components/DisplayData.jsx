@@ -25,7 +25,9 @@ const DisplayData = ({ name }) => {
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
-          <h3 className="z-10 mt-3 text-xl sm:text-2xl md:text-3xl font-bold text-white">{name}</h3>
+          <h3 className="z-10 mt-3 text-xl sm:text-2xl md:text-3xl font-bold text-white">
+            {name}, {details?.sys?.country}
+          </h3>
           <div className="z-10 text-md md:text-lg leading-6 text-gray-300">
            {details?.weather[0]?.description}
           </div>
