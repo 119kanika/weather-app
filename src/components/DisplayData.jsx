@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useSelector } from "react-redux";
-import useWeatherdata from "./customHooks/useWeatherData";
+import useWeatherdata from "../customHooks/useWeatherData";
 
 const DisplayData = ({ name }) => {
   const details = useSelector((store) => store.weather?.weatherData);

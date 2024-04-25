@@ -3,7 +3,7 @@
 import axios from "axios";
 import { useState } from "react";
 import "./App.css";
-import DisplayData from "./DisplayData";
+import DisplayData from "./components/DisplayData";
 
 function Body() {
     const [cityName, setCityName] = useState("");
