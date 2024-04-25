@@ -19,6 +19,11 @@ function Body() {
         console.log("cityName:", cityName);
     };
 
+    const firstLetter = cityName.charAt(0).toUpperCase();
+    const remainLetter = cityName.slice(1);
+    const capsLetter = firstLetter + remainLetter;
+
+
     return (
         <div className="flex flex-col items-center justify-center py-8">
                     <h2 className="font-bold text-3xl">Weather app</h2>
@@ -37,7 +42,7 @@ function Body() {
             </div>
             <div className="">
 
-            <DisplayData name={cityName} />
+            <DisplayData name={capsLetter} />
             </div>
 
             </div>
