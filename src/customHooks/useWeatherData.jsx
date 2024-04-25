@@ -4,6 +4,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addWeatherData } from "../utils/DataSlice";
+import { API_KEY } from "../utils/Constants";
 
 const useWeatherdata = async (cityName) => {
 
@@ -13,7 +14,7 @@ const useWeatherdata = async (cityName) => {
     useEffect(() => {
         const fetchData = async () => {
             const geoData = await fetch(
-                `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=834587ca6fb8f3fffe83b93dafd88ad4`
+                `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`
               );
               const jsonData = await geoData.json();
               console.log("jsondata",jsonData);
@@ -21,7 +22,7 @@ const useWeatherdata = async (cityName) => {
               const longitute = jsonData[0]?.lon;
               const latitude = jsonData[0]?.lat;
 
-                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitute}&appid=834587ca6fb8f3fffe83b93dafd88ad4`)
+                const weatherResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitute}&appid=${API_KEY}`)
 
                 const weatherData = await weatherResponse.json();
                 console.log("lat and log", weatherData);
